@@ -15,24 +15,41 @@ namespace console_calculator
             calculator();
         }
 
+        static void menu(int position)
+        {
+            String[] output_menu = {
+                                    " Console Calculator\n",
+                                    " <1> : addition\n",
+                                    " <2> : subtraction\n",
+                                    " <3> : multiplication\n",
+                                    " <4> : division\n",
+                                    " <5> : power calculation\n",
+                                    " <6> : square root\n",
+                                    " <7> : factorial calculation\n",
+                                    " <0> : exit\n\n"
+                                    };
+
+            String output_submenu = "   + more\n" +
+                                    "     [A] : new\n" +
+                                    "     [B] : last result + new\n" +
+                                    "     [C] : exit function\n";
+
+            for (int index = 0; index <= 8; index++)
+            {
+                Console.Write(output_menu[index]);
+                if (position == 0) continue;
+                else if(index == position)
+                    Console.Write(output_submenu);
+            }
+        }
+
         static void calculator()
         {
             Boolean toContinue = true;
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-
-                Console.WriteLine();
+                menu(0);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -71,10 +88,6 @@ namespace console_calculator
                     case "7":
                         factorial();
                         break;
-
-                    case "8":
-                        exponential();
-                        break;
                 }
             } while (toContinue);
         }
@@ -85,21 +98,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result + new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(1);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -176,21 +175,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result - new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(2);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -267,21 +252,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result * new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(3);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -359,21 +330,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result / new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(4);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -450,21 +407,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result ^ new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(5);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -541,21 +484,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : last result ^ 1/new");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(6);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -585,7 +514,7 @@ namespace console_calculator
 
         static void square_root_new()
         {
-            double x, y;
+            double x;
 
             Console.WriteLine();
 
@@ -602,8 +531,6 @@ namespace console_calculator
 
         static void square_root_last_result()
         {
-            double y;
-
             Console.WriteLine();
 
             Console.Write(" input x : " + last_result);
@@ -622,21 +549,7 @@ namespace console_calculator
             do
             {
                 Console.Clear();
-                Console.WriteLine(" Console Calculator");
-                Console.WriteLine(" <1> : addition");
-                Console.WriteLine(" <2> : subtraction");
-                Console.WriteLine(" <3> : multiplication");
-                Console.WriteLine(" <4> : division");
-                Console.WriteLine(" <5> : power calculation");
-                Console.WriteLine(" <6> : square root");
-                Console.WriteLine(" <7> : factorial calculation");
-                Console.WriteLine("   + more");
-                Console.WriteLine("     [A] : new");
-                Console.WriteLine("     [B] : sum of n factorial");
-                Console.WriteLine("     [C] : exit function");
-                Console.WriteLine(" <8> : exponential calculation");
-                Console.WriteLine(" <0> : exit");
-                Console.WriteLine();
+                menu(7);
 
                 String choice;
                 Console.Write(" choose : ");
@@ -712,11 +625,6 @@ namespace console_calculator
 
             Console.WriteLine(" result : " + result);
             last_result = result;
-        }
-
-        static void exponential()
-        {
-            // no clue at all
         }
     }
 }
